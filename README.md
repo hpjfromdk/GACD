@@ -22,7 +22,7 @@ http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartpho
 
 ## Using the script
 Place the script in your working directory and in the console window enter: source("run_analysis.R")
-Depending on the speed of your PC it may take a while, but eventually the the two messages shown after the source command below, should appear
+Depending on the speed of your PC it may take a while, but eventually the the two messages shown after the source command below, should appear. For the script to work, the UCI HAR zip data file **must** be named *getdata_projectfiles_UCI HAR Dataset.zip* and **must** be located in the working directory.
 
 ```
 source("run_analysis.R")
@@ -39,7 +39,7 @@ Since the desired end product is an aggregate tidy data set based upon a subset 
 
 The combined size of the processed UCI HAR data amounts to 10299 vectors of 561+ variables, and although much larger data sets exist, the approx 50MB size and subsequent processing of the data lends itself to the use of the data.table package, which contains the fread() function. Unfortunately the field separator in the ICU HAR data is one or more spaces (0x20H), which the fread() function in it's current version 1.9.4, does not support. The quite a bit slower read.table will therefor be used for reading the data into memory.  
 
-In preparation of the extraction we first load the data.table package and subsequently set up the full file path the UCI HAR zip data file. For the script to work, the UCI HAR zip data file **must** be named *getdata_projectfiles_UCI HAR Dataset.zip* and **must** be located in the working directory.
+In preparation of the extraction we first load the data.table package and subsequently set up the full file path the UCI HAR zip data file. As stated above for the script to work, the UCI HAR zip data file **must** be named *getdata_projectfiles_UCI HAR Dataset.zip* and **must** be located in the working directory.
 
 ```
 ##  Load data.table package
